@@ -37,7 +37,8 @@ export class MyApp {
 	};  
 
   pages: Array<{ title: string, component: any, active: boolean, icon: string }>;
-  rightMenuItems: Array<{ icon: string, active: boolean }>;
+	rightMenuItems: Array<{ icon: string, active: boolean }>;
+	multiLevelItems;
 
   constructor(
     platform: Platform, 
@@ -84,7 +85,30 @@ export class MyApp {
       { title: 'Timeline', component: 'TimelinePage', active: false, icon: 'calendar' },
       { title: 'Slides', component: 'SlidesPage', active: false, icon: 'contact' },
       { title: 'Theming', component: 'ThemingPage', active: false, icon: 'power' },
-    ];
+		];
+
+		this.multiLevelItems = [
+			{ displayName: 'Home', component: 'HomePage', active: false, iconName: 'home', selected: true },
+			{ displayName: 'Side Menu', component: 'SideMenuPage', active: false, iconName: 'menu'},
+			{ displayName: 'Accordion List', component: 'AccordionListPage', active: false, iconName: 'map', selected: true },
+			{ displayName: 'Sub options with icons', subItems: [
+				{	displayName: 'Sub Option 1', component: 'DetailsPage', iconName: 'basket'},
+				{	displayName: 'Sub Option 2', component: 'DetailsPage', iconName: 'bookmark'}
+			]},
+			{ displayName: 'Sub options without icons', subItems: [
+				{	displayName: 'Sub Option 3', component: 'DetailsPage' },
+				{	displayName: 'Sub Option 4', component: 'DetailsPage' }
+			]},
+			{ displayName: 'Special options', subItems: [
+				{	displayName: 'Login', iconName: 'log-in', custom: { isLogin: true } },
+				{	displayName: 'Logout', iconName: 'log-out', custom: { isLogout: true } },
+				{	displayName: 'Open google', iconName: 'globe', custom: 
+					{ isExternalLink: true, externalUrl: 'http://www.google.com' }
+				},
+			]},						
+		];
+		
+
 
     this.activePage.subscribe((selectedPage: any) => {
       this.pages.map(page => {
@@ -112,101 +136,7 @@ export class MyApp {
   
 	private initializeOptions(): void {
 		this.options = new Array<MenuOptionModel>();
-
-		// Load simple menu options
-		// ------------------------------------------
-		this.options.push({
-			iconName: 'home',
-			displayName: 'Home',
-			component: 'HomePage',
-
-			// This option is already selected
-			selected: true
-		});
-
-		this.options.push({
-			iconName: 'analytics',
-			displayName: 'Side Menu',
-			component: 'SideMenuPage'
-		});
-
-		this.options.push({
-			iconName: 'apps',
-			displayName: 'Option 2',
-			component: 'DetailsPage'
-		});
-
-		// Load options with nested items (with icons)
-		// -----------------------------------------------
-		this.options.push({
-			displayName: 'Sub options with icons',
-			subItems: [
-				{
-					iconName: 'basket',
-					displayName: 'Sub Option 1',
-					component: 'DetailsPage'
-				},
-				{
-					iconName: 'bookmark',
-					displayName: 'Sub Option 2',
-					component: 'DetailsPage'
-				}
-			]
-		});
-
-		// Load options with nested items (without icons)
-		// -----------------------------------------------
-		this.options.push({
-			displayName: 'Sub options without icons',
-			subItems: [
-				{
-					displayName: 'Sub Option 4',
-					component: 'DetailsPage'
-				},
-				{
-					displayName: 'Sub Option 5',
-					component: 'DetailsPage'
-				},
-				{
-					displayName: 'Sub Option 6',
-					component: 'DetailsPage'
-				},
-				{
-					displayName: 'Sub Option 7',
-					component: 'DetailsPage'
-				}
-			]
-		});
-
-		// Load special options
-		// -----------------------------------------------
-		this.options.push({
-			displayName: 'Special options',
-			subItems: [
-				{
-					iconName: 'log-in',
-					displayName: 'Login',
-					custom: {
-						isLogin: true
-					}
-				},
-				{
-					iconName: 'log-out',
-					displayName: 'Logout',
-					custom: {
-						isLogout: true
-					}
-				},
-				{
-					iconName: 'globe',
-					displayName: 'Open Google',
-					custom: {
-						isExternalLink: true,
-						externalUrl: 'http://www.google.com'
-					}
-				}
-			]
-		});
+		this.options=this.multiLevelItems;
 	}
 
 	public selectOption(option: MenuOptionModel): void {
@@ -220,7 +150,7 @@ export class MyApp {
 				window.open(url, '_blank');
 			} else {
 				// Redirect to the selected page
-				this.nav.setRoot(option.component || 'DetailsPage', { 'title': option.displayName });
+				this.nav.setRoot(option.component || 'HomePage', { 'title': option.displayName });
 			}
 		});
 	}
