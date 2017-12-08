@@ -1,11 +1,9 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { SharedModule } from './shared.module';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-import { SplashScreen } from '@ionic-native/splash-screen';
-import { StatusBar } from '@ionic-native/status-bar';
-
 import { MyApp } from './app.component';
+
+import { MODULES, PROVIDERS } from './app.imports';
 
 // Custom components
 import { SideMenuContentComponent } from '../shared/side-menu-content/side-menu-content.component';
@@ -18,7 +16,7 @@ import { SideMenuContentComponent } from '../shared/side-menu-content/side-menu-
     SideMenuContentComponent    
   ],
   imports: [
-    BrowserModule,
+    MODULES,
     IonicModule.forRoot(MyApp),
     SharedModule
   ],
@@ -26,10 +24,6 @@ import { SideMenuContentComponent } from '../shared/side-menu-content/side-menu-
   entryComponents: [
     MyApp
   ],
-  providers: [
-    StatusBar,
-    SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
-  ]
+  providers: [PROVIDERS, { provide: ErrorHandler, useClass: IonicErrorHandler }]
 })
 export class AppModule {}

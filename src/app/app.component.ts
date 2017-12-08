@@ -68,14 +68,14 @@ export class MyApp {
     ];    
 
     this.pages = [
-      { title: 'Home', component: 'HomePage', active: true, icon: 'home' },
-      { title: 'Accordion List', component: 'AccordionListPage', active: false, icon: 'map' },
-      { title: 'Ionic Official Components',
-        component: 'IonicOfficialComponentsPage', active: false, icon: 'ionic' },
+			{ title: 'Home', component: 'HomePage', active: true, icon: 'home' },
+			{ title: 'Side Menu', component: 'SideMenuPage', active: false, icon: 'bookmark' },
+			{ title: 'Accordion List', component: 'AccordionListPage', active: false, icon: 'map' },
+			{ title: 'Login List', component: 'LoginPage', active: false, icon: 'archive' },
+			{ title: 'Lists', component: 'ListPage', active: false, icon: 'body' },
+			{ title: 'Miscellaneous', component: 'MiscellaneousPage', active: false, icon: 'bookmarks' },
+      { title: 'Ionic Official Components', component: 'IonicOfficialComponentsPage', active: false, icon: 'ionic' },
       { title: 'Ionic Native Features', component: 'IonicNativePage', active: false, icon: 'ionic' },
-      { title: 'Login', component: 'LoginListPage', active: false, icon: 'archive' },
-      { title: 'Lists', component: 'ListPage', active: false, icon: 'body' },
-      { title: 'Miscellaneous', component: 'MiscellaneousListPage', active: false, icon: 'bookmarks' },
       { title: 'Modal with Navigation', component: 'ModalWithNavigationPage', active: false, icon: 'book' },
       { title: 'Popup Fab', component: 'PopupFabPage', active: false, icon: 'map' },
       { title: 'Popup Modal', component: 'PopupModalsPage', active: false, icon: 'basket' },
@@ -90,7 +90,10 @@ export class MyApp {
 		this.multiLevelItems = [
 			{ displayName: 'Home', component: 'HomePage', active: false, iconName: 'home', selected: true },
 			{ displayName: 'Side Menu', component: 'SideMenuPage', active: false, iconName: 'menu'},
-			{ displayName: 'Accordion List', component: 'AccordionListPage', active: false, iconName: 'map', selected: true },
+			{ displayName: 'Accordion List', component: 'AccordionListPage', active: false, iconName: 'map'},
+			{ displayName: 'Login List', component: 'LoginPage', active: false, iconName: 'archive'},
+			{ displayName: 'Lists', component: 'ListPage', active: false, iconName: 'body'},
+			{ displayName: 'Miscellaneous', component: 'MiscellaneousPage', active: false, iconName: 'bookmarks'},
 			{ displayName: 'Sub options with icons', subItems: [
 				{	displayName: 'Sub Option 1', component: 'DetailsPage', iconName: 'basket'},
 				{	displayName: 'Sub Option 2', component: 'DetailsPage', iconName: 'bookmark'}
