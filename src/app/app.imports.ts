@@ -1,9 +1,12 @@
 // Providers
 import { ToastService } from '../providers/util/toast.service';
+import { AlertService } from '../providers/util/alert.service';
+import { CameraProvider } from '../providers/util/camera.provider';
 
 // Ionic native providers
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { Camera } from '@ionic-native/camera';
 
 // Directives
 import { Autosize } from '../components/autosize/autosize';
@@ -20,10 +23,12 @@ export const MODULES = [
 ];
 
 export const PROVIDERS = [
+  AlertService,
   ToastService,
+  CameraProvider,
   
   // Ionic native specific providers
-  StatusBar,
+  Camera,  StatusBar,
   SplashScreen,    
 ];
 

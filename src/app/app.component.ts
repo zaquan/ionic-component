@@ -78,7 +78,7 @@ export class MyApp {
       { title: 'Ionic Native Features', component: 'IonicNativePage', active: false, icon: 'ionic' },
       { title: 'Modal with Navigation', component: 'ModalWithNavigationPage', active: false, icon: 'book' },
       { title: 'Popup Fab', component: 'PopupFabPage', active: false, icon: 'map' },
-      { title: 'Popup Modal', component: 'PopupModalsPage', active: false, icon: 'basket' },
+      { title: 'Popup Modal', component: 'PopupModalPage', active: false, icon: 'basket' },
       { title: 'Popup Menu', component: 'PopupMenuListPage', active: false, icon: 'beer' },
       { title: 'Profile', component: 'ProfileListPage', active: false, icon: 'camera' },
       { title: 'Side Menu', component: 'SideMenuPage', active: false, icon: 'bookmark' },
@@ -94,6 +94,9 @@ export class MyApp {
 			{ displayName: 'Login List', component: 'LoginPage', active: false, iconName: 'archive'},
 			{ displayName: 'Lists', component: 'ListPage', active: false, iconName: 'body'},
 			{ displayName: 'Miscellaneous', component: 'MiscellaneousPage', active: false, iconName: 'bookmarks'},
+			{ displayName: 'Popup Modal', component: 'PopupModalPage', active: false, iconName: 'basket'},
+			{ displayName: 'Profile', component: 'ProfileListPage', active: false, iconName: 'camera'},
+			{ displayName: 'Slides', component: 'SlidesPage', active: false, iconName: 'contact'},
 			{ displayName: 'Sub options with icons', subItems: [
 				{	displayName: 'Sub Option 1', component: 'DetailsPage', iconName: 'basket'},
 				{	displayName: 'Sub Option 2', component: 'DetailsPage', iconName: 'bookmark'}
