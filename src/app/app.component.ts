@@ -1,3 +1,4 @@
+import { AppState } from './app.global';
 import { Component, ViewChild } from '@angular/core';
 import { Platform, Nav, MenuController, AlertController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -45,9 +46,11 @@ export class MyApp {
     statusBar: StatusBar, 
     splashScreen: SplashScreen,
     private alertCtrl: AlertController,
-    private menuCtrl: MenuController    
+		private menuCtrl: MenuController,
+		public global: AppState,    
   ) {
     platform.ready().then(() => {
+			this.global.set('theme', '');
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
@@ -97,6 +100,7 @@ export class MyApp {
 			{ displayName: 'Popup Modal', component: 'PopupModalPage', active: false, iconName: 'basket'},
 			{ displayName: 'Profile', component: 'ProfileListPage', active: false, iconName: 'camera'},
 			{ displayName: 'Slides', component: 'SlidesPage', active: false, iconName: 'contact'},
+			{ displayName: 'Theming', component: 'ThemingPage', active: false, iconName: 'power'},
 			{ displayName: 'Sub options with icons', subItems: [
 				{	displayName: 'Sub Option 1', component: 'DetailsPage', iconName: 'basket'},
 				{	displayName: 'Sub Option 2', component: 'DetailsPage', iconName: 'bookmark'}

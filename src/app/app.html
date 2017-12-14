@@ -1,3 +1,4 @@
+<div class="{{global.state['theme']}}">
   <!--Collapsible Menu-->
   <ion-menu persistent="true" [content]="content" id="menu-multilevel" (ionClose)="collapseMenuOptions()">
     <ion-header>
@@ -88,3 +89,4 @@
   </ion-menu>     
   <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
   <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+</div>
