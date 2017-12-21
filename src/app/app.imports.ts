@@ -1,4 +1,5 @@
 // Global state (used for theming)
+// Global state (used for theming)
 import { AppState } from './app.global';
 
 // Providers
@@ -10,6 +11,10 @@ import { CameraProvider } from '../providers/util/camera.provider';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Camera } from '@ionic-native/camera';
+
+// Ionic native providers
+import { CardIO } from '@ionic-native/card-io';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
 // Directives
 import { Autosize } from '../components/autosize/autosize';
@@ -32,7 +37,10 @@ export const PROVIDERS = [
   AppState,
   
   // Ionic native specific providers
-  Camera,  StatusBar,
+  CardIO,
+  BarcodeScanner,
+  Camera,  
+  StatusBar,
   SplashScreen,    
 ];
 

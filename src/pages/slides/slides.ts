@@ -20,10 +20,10 @@ export class SlidesPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.rootPage = SlidesPage;
     this.items = [
-      // {
-      //   title: 'Carousel',
-      //   page: 'SlideCarouselPage'
-      // },
+       {
+         title: 'Carousel',
+         page: 'SlideCarouselPage'
+       },
       {
         title: 'Color changing sliders',
         page: 'SlideColorChangingPage'
