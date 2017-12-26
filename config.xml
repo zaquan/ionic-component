@@ -87,8 +87,15 @@
         <variable name="CAMERA_USAGE_DESCRIPTION" value="To scan barcodes" />
     </plugin>
     <plugin name="card.io.cordova.mobilesdk" spec="^2.1.0" />
-    <plugin name="cordova-plugin-googlemaps" spec="^2.1.1">
-        <variable name="API_KEY_FOR_ANDROID" value="AIzaSyCBxCFo5OBefDa5Br_PFkqT-n8palbqusE" />
-        <variable name="API_KEY_FOR_IOS" value="AIzaSyCBxCFo5OBefDa5Br_PFkqT-n8palbqusE" />
+    <plugin name="cordova-plugin-geolocation" spec="^3.0.0">
+        <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="To locate you" />
     </plugin>
+    <engine name="ios" spec="~4.5.4" />
+    <plugin name="cordova-plugin-googlemaps" spec="^2.1.1">
+        <variable name="API_KEY_FOR_ANDROID" value="AIzaSyAap_seQA5QDtijYzEoSRoEDtEaJkwuhdg" />
+        <variable name="API_KEY_FOR_IOS" value="AIzaSyAap_seQA5QDtijYzEoSRoEDtEaJkwuhdg" />
+        <variable name="LOCATION_WHEN_IN_USE_DESCRIPTION" value="Show your location on the map" />
+        <variable name="LOCATION_ALWAYS_USAGE_DESCRIPTION" value="Trace your location on the map" />
+    </plugin>
+    <allow-navigation href="http://192.168.6.13:8100" />
 </widget>

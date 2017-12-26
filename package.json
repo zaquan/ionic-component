@@ -24,6 +24,7 @@
     "@ionic-native/camera": "^4.5.2",
     "@ionic-native/card-io": "^4.5.2",
     "@ionic-native/core": "4.4.0",
+    "@ionic-native/geolocation": "^4.5.2",
     "@ionic-native/google-maps": "^4.5.2",
     "@ionic-native/splash-screen": "4.4.0",
     "@ionic-native/status-bar": "4.4.0",
@@ -32,9 +33,12 @@
     "card.io.cordova.mobilesdk": "^2.1.0",
     "chart.js": "^2.7.1",
     "cordova-android": "6.3.0",
+    "cordova-ios": "4.5.4",
     "cordova-plugin-camera": "^3.0.0",
     "cordova-plugin-device": "^1.1.4",
+    "cordova-plugin-geolocation": "^3.0.0",
     "cordova-plugin-googlemaps": "^2.1.1",
+    "cordova-plugin-googlemaps-sdk": "git+https://github.com/mapsplugin/cordova-plugin-googlemaps-sdk.git",
     "cordova-plugin-ionic-webview": "^1.1.16",
     "cordova-plugin-splashscreen": "^4.0.3",
     "cordova-plugin-whitelist": "^1.3.1",
@@ -63,13 +67,19 @@
         "CAMERA_USAGE_DESCRIPTION": "To scan barcodes"
       },
       "card.io.cordova.mobilesdk": {},
+      "cordova-plugin-geolocation": {
+        "GEOLOCATION_USAGE_DESCRIPTION": "To locate you"
+      },
       "cordova-plugin-googlemaps": {
-        "API_KEY_FOR_ANDROID": "AIzaSyCBxCFo5OBefDa5Br_PFkqT-n8palbqusE",
-        "API_KEY_FOR_IOS": "AIzaSyCBxCFo5OBefDa5Br_PFkqT-n8palbqusE"
+        "API_KEY_FOR_ANDROID": "AIzaSyAap_seQA5QDtijYzEoSRoEDtEaJkwuhdg",
+        "API_KEY_FOR_IOS": "AIzaSyAap_seQA5QDtijYzEoSRoEDtEaJkwuhdg",
+        "LOCATION_WHEN_IN_USE_DESCRIPTION": "Show your location on the map",
+        "LOCATION_ALWAYS_USAGE_DESCRIPTION": "Trace your location on the map"
       }
     },
     "platforms": [
-      "android"
+      "android",
+      "ios"
     ]
   }
 }
